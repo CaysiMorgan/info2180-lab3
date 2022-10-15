@@ -5,10 +5,19 @@ window.onload= function(){
     const controls= document.getElementsByClassName("controls");
     const button = document.getElementsByClassName("btn")[0];
 
+  
+   
     const element = board.querySelectorAll('div');
     let play='X';
     let positionList = ['', '', '', '', '', '', '', '', ''];
+    
+  // Adding squares to screen
+    for(let i=0; i<=8; i++){
+        element[i].setAttribute("class","square");
 
+        
+    }
+    
     const winningConditions = [
         [0, 1, 2],
         [3, 4, 5],
@@ -20,12 +29,7 @@ window.onload= function(){
         [2, 4, 6]
     ];
 
- // Adding squares to screen
-    for(let i=0; i<=8; i++){
-        element[i].setAttribute("class","square");
-
-        
-    }
+ 
     //actions
     element.forEach( (elem, index) => {
         elem.addEventListener('click', () => userAction(elem, index));
